@@ -10,9 +10,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "hchs-vue-charts": "^1.2.8",
     "materialize-css": "^0.100.2",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-chart-js": "^1.4.1",
+    "vue-material": "^1.0.0-beta-7",
+    "vue-my-dropdown": "^2.1.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -46,6 +51,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.9",
+    "vue-clickoutside": "^0.2.0",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",

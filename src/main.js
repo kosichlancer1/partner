@@ -3,21 +3,35 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Materialize from 'materialize-css'
-import 'materialize-css/dist/css/materialize.min.css'
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+
 import './assets/style/app.sass'
+import store from './store'
+import VueChart from 'vue-chart-js'
+
+
+
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 
-Vue.use(Materialize)
+
+Vue.use(VueChart)
+Vue.use(VueMaterial)
+
+
 
 new Vue({
   el: '#app',
   router,
+    store,
   components: {
     App
   },
-  template: '<App/>'
+  template: '<App/>',
+    directives: {
+
+    }
 })

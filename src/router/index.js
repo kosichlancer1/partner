@@ -10,14 +10,21 @@ export default new Router({
           path: '/',
           name: 'Home',
           component: function (resolve) {
-              require(['@/components/Home.vue'], resolve)
+              require(['@/pages/Home.vue'], resolve)
           }
       },
       {
           path: '/webmaster',
           name: 'Webmasters',
           component: function (resolve) {
-              require(['@/components/Webmasters.vue'], resolve)
+              require(['@/pages/Webmasters.vue'], resolve)
+          }
+      },
+      {
+          path: '/office-main',
+          name: 'office-main',
+          component: function (resolve) {
+              require(['@/pages/app-office-main.vue'], resolve)
           }
       },
 

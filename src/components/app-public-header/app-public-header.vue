@@ -1,13 +1,13 @@
 <template>
     <header class="header">
         <div class="container">
-            <div class="row">
-                <div class="col s2">
+            <div class="md-layout md-gutter">
+                <div class="md-layout-item md-size-15">
                     <a href="" class="header__logo">
                         <img src="../../assets/images/logo.png" alt="">
                     </a>
                 </div>
-                <div class="col s7">
+                <div class="md-layout-item md-size-70">
                     <div class="header__nav">
                         <a href="#" class="uppercase">о нас</a>
                         <a href="#" class="uppercase active">рекламодателям</a>
@@ -18,25 +18,58 @@
                         <a href="#" class="uppercase">Контакты</a>
                     </div>
                 </div>
-                <div class="col s2">
+                <div class="md-layout-item md-size-15">
                     <div class="header__authorization">
-                        <a href="" class="fc-accent">Регистрация</a>
-                        <a href="" class="fc-accent">Вход</a>
+                        <a  class="fc-accent" @click="registrModalShow()">Регистрация</a>
+                        <a  class="fc-accent" @click="loginModalShow()">Вход</a>
                     </div>
                 </div>
                 
             </div>
         </div>
+        <LoginModal v-if="loginShow"></LoginModal>
+        <RegisterModal v-if="registShow" ></RegisterModal>
     </header>
+
 
 </template>
 
 <script>
-    export default {
+    import LoginModal from "../modals/app-login-modal.vue"
+    import RegisterModal from "../modals/app-register-modal.vue"
+    import store from "../../store"
 
+
+    export default {
+        components: {
+            LoginModal,
+            RegisterModal
+        },
         data () {
             return {
-                menu: 'textwwwww'
+                menu: 'textwwwww',
+            }
+        },
+        methods: {
+            registrModalShow () {
+                store.commit('showRegistr')
+            },
+            registrModalHide () {
+                store.commit('hideRegistr')
+            },
+            loginModalShow () {
+                store.commit('showLogin')
+            },
+            loginModalHide () {
+                store.commit('hideLogin')
+            }
+        },
+        computed: {
+            registShow () {
+                return store.state.registrVisible
+            },
+            loginShow () {
+                return store.state.loginVisible
             }
         }
 
@@ -47,8 +80,9 @@
 <style lang="sass" scoped>
     @import  '~@/assets/style/var.sass'
 
-    header.header
 
+    header.header
+        /*background-color: #fafafa*/
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)
         padding-top: 10px
         padding-bottom: 10px

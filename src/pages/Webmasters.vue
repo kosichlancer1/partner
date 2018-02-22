@@ -1,13 +1,13 @@
 <template>
-    <div class="home-page">
-        <router-link to="/webmaster">Go to Foo</router-link>
+    <div class="web">
+        <h1>Личный кабинет</h1>
     </div>
 </template>
 
 <script>
 
     export default {
-        name: 'Home',
+        name: 'Webmasters',
         data () {
             return {
                 menu: 'textwwwww'

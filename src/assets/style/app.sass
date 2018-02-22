@@ -2,14 +2,41 @@
 @import 'var.sass'
 @import 'typography.sass'
 @import 'buttons.sass'
+@import 'helpers.sass'
+@import 'elements.sass'
+@import 'icon.sass'
+@import 'customize.sass'
+
+
+
+
 
 
 body
   font-size: 15px
+  background-color: #ffffff
+
+p
+  margin-top: 15px
+  margin-bottom: 15px
+
+
+ul
+  padding: 0
+  li
+    list-style: none
+
+a
+  &:hover
+    text-decoration: none
 
 .container
   width: 100%
   max-width: 1440px
+  margin: 0 auto
 
 
-
+.office
+  background-color: $mainColor
+  padding-top: 30px
+  padding-bottom: 30px
